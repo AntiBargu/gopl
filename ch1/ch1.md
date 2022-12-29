@@ -803,7 +803,7 @@ func handler(w http.ResponseWriter, r *http.Request) {
 
 main函数将一个处理函数和以/开头的URL链接在一起，**代表所有的URL使用这个函数处理**，然后启动服务器监听进人8000端口处的请求。一个**请求由一个http.Request类型的结构体表示**，它包含很多关联的域，其中一个是所请求的URL。当一个请求到达时，它被转交给处理函数，并从请求的URL 中提取路径部分（/hello），使用fmt.Printf格式化，然后作为响应发送回去。
 
-**在Mac OS X或者Linux上，在命令行后添加一个&符号**。
+**<u>在后台启动服务器</u>，在Mac OS X或者Linux上，<u>在命令行后添加一个&符号</u>**。
 
 ```shell
 ./server1 &
