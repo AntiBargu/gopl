@@ -1,5 +1,5 @@
 // tempconv 包负责摄氏温度与华氏温度的转换
-package tempconv // import "github.com/rucetc/gopl/ch2/tempconv"
+package tempconv // import "github.com/AntiBargu/gopl/ch2/tempconv"
 
 import "fmt"
 

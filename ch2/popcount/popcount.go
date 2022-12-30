@@ -1,4 +1,4 @@
-package popcount // import "github.com/rucetc/gopl/ch2/popcount"
+package popcount // import "github.com/AntiBargu/gopl/ch2/popcount"
 
 // pc[i] 是i的种群统计
 var pc [256]byte

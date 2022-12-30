@@ -128,7 +128,7 @@ f, err := os.Create(outfile) // 编译错误：没有新的变量
 
 **不是所有的值都有地址，但是所有的变量都有**。使用指针，可以在无须知道变量名字的情况下，间接读取或更新变量的值。
 
-函数返回局部变量的地址是非常安全的。
+**函数返回局部变量的地址是非常安全的**。
 
 > 区别与C/C++，在C/C++中是不安全的
 
@@ -210,7 +210,7 @@ func delta(old, new int) int { return new - old }
 
 > 这一点区别与C/C++，C/C++局部变量的生命周期是在其特定的作用域，作用域之外若试图通过指针访问它的话，会出现难以预料的问题。
 
-编译器可以选择使用堆或栈上的空间来分配，令人惊奇的是，这个选择不是基于使用var 或 new关键字来声明变量。
+编译器可以选择使用堆或栈上的空间来分配，令人惊奇的是，这个选择不是基于使用var或new关键字来声明变量。
 
 ```go
 var global *int
@@ -325,7 +325,7 @@ func main() {
 
 在Go语言中**包的作用**和其他语言中的库或模块作用类似，用于支持**模块化**、**封装**、**编译隔离**和**重用**。一个包的源代码保存在一个或多个以.go结尾的文件中。
 
-**每一个包给它的声明提供独立的命名空间**。例如，在image包中，Decode标识符和unicode/utf16 包中的标识符一样，但是关联了不同的函数。为了从包外部引用一个函数，我们必须明确修饰标识符来指明所指的是image.Decode 或 utf16.Decode。
+**每一个包给它的声明提供独立的命名空间**。例如，在image包中，Decode标识符和unicode/utf16包中的标识符一样，但是关联了不同的函数。为了从包外部引用一个函数，我们必须明确修饰标识符来指明所指的是image.Decode 或 utf16.Decode。
 
 在Go里，通过一条简单的规则来管理标识符是否对外可见：**导出的标识符以大写字母开头**。
 
@@ -335,7 +335,7 @@ func main() {
 
 ```go
 // tempconv 包负责摄氏温度与华氏温度的转换
-package tempconv // import "github.com/rucetc/gopl/ch2/tempconv"
+package tempconv // import "github.com/AntiBargu/gopl/ch2/tempconv"
 
 import "fmt"
 
@@ -403,7 +403,7 @@ var c = 1     // c 第一个初始化, 为 1
 func f() int { return c + 1 }
 ```
 
-包的初始化按照在程序中导人的顺序来进行，**依赖顺序优先**，**每次初始化一个包**。因此，如果包p导人了包q，可以确保q在p之前已完全初始化。**初始化过程是自下向上的，main包最后初始化**。在这种方式下，在程序的main函数开始执行前，所有的包已初始化完毕。
+包的初始化按照在程序中导入的顺序来进行，**依赖顺序优先**，**每次初始化一个包**。因此，如果包p导入了包q，可以确保q在p之前已完全初始化。**初始化过程是自下向上的，main包最后初始化**。在这种方式下，在程序的main函数开始执行前，所有的包已初始化完毕。
 
 ```go
 package popcount
@@ -436,7 +436,7 @@ func PopCount(x uint64) int {
 ##### 练习 2.3
 
 ```go
-package popcount1 // import "github.com/rucetc/gopl/ch2/popcount1"
+package popcount1 // import "github.com/AntiBargu/gopl/ch2/popcount1"
 
 // pc[i] 是i的种群统计
 var pc [256]byte
@@ -465,7 +465,7 @@ func PopCount(x uint64) int {
 ##### 练习 2.4
 
 ```go
-package popcount2 // import "github.com/rucetc/gopl/ch2/popcount2"
+package popcount2 // import "github.com/AntiBargu/gopl/ch2/popcount2"
 
 // PopCount 返回x的种群统计（置位的个数）
 func PopCount(x uint64) int {
@@ -484,7 +484,7 @@ func PopCount(x uint64) int {
 ##### 练习 2.5
 
 ```go
-package popcount3 // import "github.com/rucetc/gopl/ch2/popcount3"
+package popcount3 // import "github.com/AntiBargu/gopl/ch2/popcount3"
 
 // PopCount 返回x的种群统计（置位的个数）
 func PopCount(x uint64) int {
