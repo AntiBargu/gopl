@@ -62,6 +62,7 @@ import (
 
 func main() {
 	var s, sep string
+  
 	for i := 1; i < len(os.Args); i++ {
 		s += sep + os.Args[i]
 		sep = " "
@@ -125,7 +126,7 @@ func main() {
 
 每次循环迭代，**range**产生一对值；**索引**以及**在该索引处的元素值**。**Go语言不允许使用无用的局部变量（local variables），因为这会导致编译错误**。
 
-Go语言中这种情况的解决方法是用**空标识符（**blank identifier），即_（也就是下划线）。**空标识符可用于在任何语法需要变量名但程序逻辑不需要的时候**（如：在循环里）丢弃不需要的循环索引，并保留元素值。
+Go语言中这种情况的解决方法是用**空标识符**（blank identifier），即_（也就是下划线）。**空标识符可用于在任何语法需要变量名但程序逻辑不需要的时候**（如：在循环里）丢弃不需要的循环索引，并保留元素值。
 
 **每次循环迭代字符串s的内容都会更新**。+=连接原字符串、空格和下个参数，产生新字符串，并把它赋值给s。**s原来的内容已经不再使用，将在适当时机对它进行垃圾回收**。
 
@@ -192,7 +193,7 @@ import (
     "os"
 )
 
-func main() {
+func main() { 
     counts := make(map[string]int)
     input := bufio.NewScanner(os.Stdin)
     for input.Scan() {
